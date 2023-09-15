@@ -1,0 +1,43 @@
+﻿<Window x:Class="Zdn3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Zdn3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="330.978" Width="605.435">
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock Text="Lista Kontaktów" FontSize="18" FontWeight="Bold" Margin="0 0 0 10"/>
+            <DataGrid Name="ContactDataGrid" AutoGenerateColumns="True" SelectionMode="Single" Margin="0 0 0 10"/>
+            <GroupBox Header="Szczegóły Kontaktu">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Content="Imię:"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Name="FirstNameTextBox"/>
+                    <Label Grid.Row="1" Grid.Column="0" Content="Nazwisko:"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Name="LastNameTextBox"/>
+                    <Label Grid.Row="2" Grid.Column="0" Content="Email:"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Name="EmailTextBox"/>
+                    <Label Grid.Row="3" Grid.Column="0" Content="Telefon:"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Name="PhoneNumberTextBox"/>
+                </Grid>
+            </GroupBox>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Dodaj Kontakt" Click="AddContactButton_Click" Width="100" Margin="0 0 10 0"/>
+                <Button Content="Edytuj Kontakt" Click="EditContactButton_Click" Width="100" Margin="0 0 10 0"/>
+                <Button Content="Usuń Kontakt" Click="DeleteContactButton_Click" Width="100"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
+
